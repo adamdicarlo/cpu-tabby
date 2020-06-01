@@ -1,0 +1,21 @@
+{
+  "name": "cpu-tabby",
+  "version": "1.0.0",
+  "description": "Local web app to monitor CPU load 😸",
+  "scripts": {
+    "start": "concurrently -c green,magenta -n client,server -k 'yarn --cwd ./client start' 'yarn --cwd ./server start'"
+  },
+  "license": "MIT",
+  "private": true,
+  "author": "Adam DiCarlo <97462+adamdicarlo@users.noreply.github.com>",
+  "engines": {
+    "node": "13.x"
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  },
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
