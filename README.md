@@ -6,7 +6,7 @@
    /_/                                   /____/
 ```
 
-**cpu tabby** is an app that monitors CPU usage levels on your computer, allowing you to see what the current and recent levels are, and when your CPU usage stays high for at least two minutes.
+**cpu tabby** is an app that monitors CPU load on your computer, allowing you to see the average CPU load over the last ten minutes, whether the load is currently "high" (over 100% for two minutes), and when the last "high load" event took place.
 
 The app runs completely on your computer, but you’ll access its interface through a web browser.
 
@@ -57,12 +57,12 @@ Most of the front-end is in `Main.tsx`, and could use a refactoring, as the `Mai
 
 Sharing some code between front-end and back-end, like some of the type definitions, would have been nice, but setting that up seemed like it would be too time-consuming for this exercise.
 
-Making the back-end’s timeline data format better match what the charting library expects would simplify the front-end.
+Making the back-end’s timeline data format (in API responses) better match what the charting library expects would simplify the front-end code a little.
 
 ### Decisions
 
 1. Use TypeScript for practice, all the help it provides in avoiding bugs, and to (hopefully) make the code easier to follow.
-2. Use yarn workspaces, as I’ve been curious to try it, and it’s a slightly less hacky approach than what I’ve done in the past, which was to make both the client’s and server’s "start" script first run `yarn` to ensure packages are installed. It also results in a single `yarn.lock` file that is smaller overall than separate lockfiles, because of shared dependencies.
+2. Use yarn workspaces, as I’ve been curious to try it, and it’s a slightly less hacky approach than what I’ve done in the past, which was to make both the client’s and server’s "start" scripts first run `yarn` to ensure packages are installed. It also results in a single `yarn.lock` file that is smaller overall than separate lockfiles, because of shared dependencies.
 3. Don’t use Next.js. I haven’t tried it yet, and it looks super neat. But its framework-like nature, and deep-baked server-side and static rendering support would make this app more complicated.
 4. Use create-react-app (CRA). I recently tried Parcel and loved how straight-forward, easy, and fast it was, but it doesn’t have a built-in API proxy like CRA. Since CRA uses `webpack-dev-server`, it can easily be configured to not only serve assets (and manage UI builds), but also to proxy certain requests, acting like a basic API gateway. It’s not suitable for deployment, but it’s a handy development tool.
 5. Use Material UI. It’s a rather heavy, complicated set of React components, but it should save time with building and styling, and I’m familiar with it. (There ended up being very little UI, but it was still somewhat handy.)
