@@ -10,6 +10,16 @@
 
 The app runs completely on your computer, but you’ll access its interface through a web browser.
 
+## Screenshots
+
+<table>
+<tr><td>
+  <img alt="active alert screenshot" src="./assets/webapp-active-alert-screenshot.png">
+</td><td>
+  <img alt="high load recovered screenshot" src="./assets/webapp-recovered-screenshot.png">
+</td></tr>
+</table>
+
 
 ## Setup
 
@@ -30,9 +40,11 @@ Make sure you have Node.js v13 installed. This is easiest by using [`Node Versio
   yarn start
 ```
 
-The front-end build takes a bit of time on the first run.
+The front-end build takes a bit of time on its first run, but when it completes, your browser will automatically open the app at [http://localhost:3000](http://localhost:3000) and your terminal should look like this:
 
-Your browser should automatically open to the app at [http://localhost:3000](http://localhost:3000). Have fun!
+<img alt="screenshot of yarn start output" height="552" src="./assets/yarn-start-screenshot.png">
+
+Have fun!
 
 
 ## Technical discussion
